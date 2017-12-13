@@ -19,10 +19,10 @@
                     :on-data ::get-data
                     :on-error ::get-error}}))
 
-(re-frame/reg-event-fx
+(re-frame/reg-event-db
  ::get-data
- (fn [_ [_ data]]
-   (js/console.log (:message data))))
+ (fn [db [_ data]]
+   (assoc db :message (:message data))))
 
 (re-frame/reg-event-fx
  ::get-error

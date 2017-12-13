@@ -4,8 +4,13 @@
             [frontend.events :as events]
             ))
 
+(def not-nil? (complement nil?))
+
 (defn main-panel []
-  (let [name (re-frame/subscribe [::subs/name])]
+  (let [name (re-frame/subscribe [::subs/name])
+        message (re-frame/subscribe [::subs/message])]
     [:div
      [:p "Hello from " @name]
-     [:button {:on-click #(re-frame/dispatch [::events/message])} "Get Message"]]))
+     [:button {:on-click #(re-frame/dispatch [::events/message])} "Get Message"]
+     (if (not-nil? @message)
+       [:p @message] )]))
