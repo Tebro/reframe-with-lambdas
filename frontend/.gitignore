@@ -1,0 +1,10 @@
+/*.log
+/target
+/*-init.clj
+/resources/public/js/compiled
+/resources/public/css
+out
+/src/cljs/frontend/config.cljs
+.cljs_rhino_repl
+.nrepl-port
+

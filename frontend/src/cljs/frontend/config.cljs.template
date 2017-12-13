@@ -1,0 +1,13 @@
+(ns frontend.config)
+
+(def debug?
+  ^boolean goog.DEBUG)
+
+(def region "eu-west-1")
+
+(def identity-pool-id "<cognito_identity_pool_id")
+
+(def lambda-functions {
+                       :hello "<hello_lambda_function_arn>"
+                       })
+
